@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
     void Start()
     {
-        Debug.Log("Is Connecting to the server");
-        PhotonNetwork.ConnectUsingSettings();   
+        Debug.Log("Connecting to the server");
+        PhotonNetwork.ConnectUsingSettings();
     }
     public override void OnConnectedToMaster()
     {
@@ -17,6 +15,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
     public override void OnDisconnected(DisconnectCause cause)
     {
-        Debug.Log("Disconnected from the server for reason: "+cause.ToString());
+        Debug.Log("Disconnected from the server for reason: " + cause.ToString());
     }
 }
